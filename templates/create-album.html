@@ -1,0 +1,71 @@
+<html>
+
+<head>
+    <!-- JQuery -->
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+    <script type="text/javascript" src="{{ url_for('static', filename = 'create-album.js') }}"></script>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+    <style>
+        .error-field {
+            border-bottom: 3px solid red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9">
+                <a href="/">Return</a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <span>Title</span>
+                <input id="title-input"></input>
+                <br>
+
+                <span>Artists (Comma separated)</span>
+                <input id="artists-input"></input>
+                <br>
+
+                <span>Year</span>
+                <input id="year-input"></input>
+                <br>
+
+                <span>Genres (Comma separated)</span>
+                <input id="genres-input"></input>
+                <br>
+
+                <span>Labels (Comma separated)</span>
+                <input id="labels-input"></input>
+                <br>
+
+                <span>Producers (Comma separated)</span>
+                <input id="producers-input"></input>
+                <br>
+
+                <span>Description</span>
+                <input id="description-input"></input>
+                <br>
+
+                <span>Album Art (link)</span>
+                <input id="album-art-input"></input>
+                <br>
+
+                <br>
+                <button class="btn btn-primary" id="submit-button">Submit</button>
+
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

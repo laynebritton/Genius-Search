@@ -1,0 +1,44 @@
+<html>
+
+<head>
+    <!-- JQuery -->
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+    <script type="text/javascript" src="{{ url_for('static', filename = 'update-album.js') }}"></script>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+    <script>
+        var album = {{ album | tojson }}
+    </script>
+
+    <style>
+        #review-input{
+            width:100%;
+        }
+    </style>
+</head>
+
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-9">
+            <a href="/">Return</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-9">
+            <span>Write your review of {{album.title}} by {{album.artists}} here</span>
+            <input id="review-input"></input>
+            <br>
+            <button class="btn btn-primary" id="submit-button">Submit</button>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>
