@@ -396,21 +396,39 @@ albums = [
 
 @app.route('/')
 def index():
-   return render_template('search.html', results=albums)
+    recent_albums = albums[-9:]
+    recent_albums.reverse()
+    return render_template('home.html', results=recent_albums)
 
-
-@app.route('/search', methods=['GET','POST'])
-def search():
+@app.route('/search/<term>')
+def search(term=None):
     global albums
+    if term=="*all":
+        return render_template('search.html', results=albums)
+    # json_data = request.get_json()   
 
-    json_data = request.get_json()   
+    # search_term = json_data["search_term"]
 
-    search_term = json_data["search_term"]
-    
+    search_term = term    
     results= list(filter(lambda album: (album["title"] == search_term or search_term in album["artists"]), albums))
     # print(results, flush=True)
+    # return jsonify(results = results)
 
-    return jsonify(results = results)
+    return render_template('search.html', results=results)
+
+# @app.route('/search-results', methods=['GET','POST'])
+# def search_results():
+#     global albums
+
+#     json_data = request.get_json()   
+
+#     search_term = json_data["search_term"]
+    
+#     results= list(filter(lambda album: (album["title"] == search_term or search_term in album["artists"]), albums))
+#     # print(results, flush=True)
+#     # return jsonify(results = results)
+
+#     return render_template('search.html', results=results)
 
 
 @app.route('/view/<id>')

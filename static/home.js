@@ -92,18 +92,8 @@ function delete_album(id){
 
 }
 
-
-
-
-
 $(document).ready(function () {
-
-    $("#create-button").click(function () {
-        window.location.href = "/create"
-    })
-
 
     populate_results()
     
-
 })

@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<head>
+    <!-- JQuery -->
+
+
+    <script type="text/javascript" src="{{ url_for('static', filename = 'home.js') }}"></script>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+    <script>
+        var results = {{ results | tojson }}
+    </script>
+
+<style>
+    .error-field{
+        border-bottom: 3px solid red;
+    }
+    .search-img{
+        width: 100%;
+    }
+    .search-result{
+        margin-bottom: 2%;
+    }
+    .album-labels-text{
+        color:lightgray;
+        font-size: 0.75rem;
+    }
+</style>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9">
+                <h2>
+                    Welcome to Genius Search
+                </h2>
+                <h3>
+                    Find out who worked on your favorite music to find new music
+                </h3>
+                <h4>
+                    Most recent entries
+                </h4>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-10" id="search-results-container">
+            </div>
+        </div>
+    </div>
+</body>
+
+{% endblock %}

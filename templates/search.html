@@ -1,66 +1,66 @@
-<html>
+{% extends "layout.html" %}
+
+{% block content %}
 
 <head>
-       <!-- JQuery -->
-       <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
-       <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
-       <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-       
-       <script type="text/javascript" src="{{ url_for('static', filename = 'search.js') }}"></script>
-   
-       <!-- Bootstrap -->
-       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
-           integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <!-- JQuery -->
 
-    <script>
-        var results = {{ results | tojson }}
-    </script>
+    
+    <script type="text/javascript" src="{{ url_for('static', filename = 'search.js') }}"></script>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+ <script>
+     var results = {{ results | tojson }}
+ </script>
 
 
-    <style>
-        .error-field{
-            border-bottom: 3px solid red;
-        }
-        .search-img{
-            width: 100%;
-        }
-        .search-result{
-            margin-bottom: 2%;
-        }
-        .album-labels-text{
-            color:lightgray;
-            font-size: 0.75rem;
-        }
-    </style>
+ <style>
+     .error-field{
+         border-bottom: 3px solid red;
+     }
+     .search-img{
+         width: 100%;
+     }
+     .search-result{
+         margin-bottom: 2%;
+     }
+     .album-labels-text{
+         color:lightgray;
+         font-size: 0.75rem;
+     }
+ </style>
 
 </head>
 
 <body>
-    <div class="container">
-        <div class="row search-header">
-            <div class="col-md-6">
-                <h2>
-                    Search
-                </h2>
-            </div>
-        </div>
+ <div class="container">
+     <div class="row search-header">
+         <div class="col-md-6">
+             <h2>
+                 Search
+             </h2>
+         </div>
+     </div>
 
-        <div class="row search-bar">
-            <div class="col-md-6">
-                <div id="search-bar-container">
-                    <input id="search-input"></input> <button class="btn btn-primary" id="submit-button">Submit</button>&nbsp;<button class="btn btn-secondary" id="create-button">Create</button>
-                </div>
-                <div id="search-bar-container">
-                    
-                </div>
-            </div>
-        </div>
-        <br>
-        <div class="row">
-            <div class="col-md-10" id="search-results-container">
-            </div>
-        </div>
-    </div>
+     <div class="row search-bar">
+         <div class="col-md-6">
+             <!-- <div id="search-bar-container">
+                 <input id="search-input"></input> <button class="btn btn-primary" id="submit-button">Submit</button>&nbsp;<button class="btn btn-secondary" id="create-button">Create</button>
+             </div> -->
+             <div id="search-bar-container">
+                 
+             </div>
+         </div>
+     </div>
+     <br>
+     <div class="row">
+         <div class="col-md-10" id="search-results-container">
+         </div>
+     </div>
+ </div>
 
 
 
@@ -68,4 +68,4 @@
 
 </body>
 
-</html>
+{% endblock %}
