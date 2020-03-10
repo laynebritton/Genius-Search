@@ -15,81 +15,41 @@ function clear_search_results(){
 }
 
 function add_result(result){
-	var div = $('<div class="row search-result">')
-    var img_div=$('<div class="col-md-2 col-sm-6 search-result-'+ result.id + '">')
-    
-    var result_image =$('<img src="' + result.album_art + '" class="search-img">')
-    img_div.append(result_image)
-    $(div).append(img_div)
+    var card = $('<div class="card">')
 
-	var search_result = $('<div class="search-results col-md-6 search-result-'+ result.id + '">')
+    var card_img = $('<img src="' + result.album_art + '" class="card-img-top search-img" id="'+ result.id +'">')
+    $(card).append(card_img)
 
-    var album_title = $('<span class="album-title-text">')
-    album_title.text(result.title)
-    $(search_result).append(album_title)
-    $(search_result).append($('<br>'))
+    var card_body = $('<div class="card-body">')
 
-    var album_artists = $('<span class="album-artists-text">')
-    album_artists.text(result.artists)
-    $(search_result).append(album_artists)
-    $(search_result).append($('<br>'))
+    var card_title=$('<h5 class="card-title" alt="'+ result.title + '">')
+    $(card_title).text(result.title)
+    $(card_body).append(card_title)
 
-    var album_year = $('<span class="album-year-text">')
-    album_year.text(result.year)
-    $(search_result).append(album_year)
-    $(search_result).append($('<br>'))
+    var card_artists = $('<span class="card-text" alt="'+ result.artists+ '">')
+    $(card_artists).text(result.artists)
+    $(card_body).append(card_artists)
 
-    var album_labels = $('<span class="album-labels-text">')
-    album_labels.text(result.labels)
-    $(search_result).append(album_labels)
-    $(search_result).append($('<br>'))
+    var card_year = $('<span class="card-text year-text" alt="' +result.year + '">')
+    $(card_year).text( ", " + result.year)
+    $(card_body).append(card_year)
 
-    // Finally append the created div
-    $(div).append(search_result)
-	
-	var search_result_delete = $('<div class="col-md-2">')
-	var delete_search_result_button = $("<button class='btn btn-danger' id='" + result.id + "'>")
-	delete_search_result_button.text("X")
+    $(card).append(card_body)
 
-	$(search_result_delete).append(delete_search_result_button)
-	$(div).append(search_result_delete)
-
-	$("#search-results-container").append(div)
-
-    $(".search-result-" + result.id).click(function () {
-        window.location.href = "/view/"+result.id;
-    })
+    $("#search-results-container").append(card)
 
 	$("#" + result.id).click(function () {
-		delete_album($(this ).attr('id'))
+        window.location.href = "/view/"+result.id
     })
-    
-}
 
-function delete_album(id){
-    var query= {
-        "id": id,
-    }
-
-    $.ajax({
-        type: "POST",
-        url: "/delete-album",                
-        dataType : "json",
-        contentType: "application/json; charset=utf-8",
-        data : JSON.stringify(query),
-        success: function(result){
-            $(".search-result-"+id).remove()
-            $("#"+id).remove()
-
-        },
-        error: function(request, status, error){
-            console.log("Error retrieving search results");
-            console.log(request)
-            console.log(status)
-            console.log(error)
-        }
+    $("#" + result.id).hover(function () {
+        $(this).addClass("hover-over-clickable")
+    }, function () {
+        
+        $(this).removeClass('hover-over-clickable');
     });
 
+    
 }
 
 $(document).ready(function () {

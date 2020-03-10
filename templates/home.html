@@ -16,21 +16,27 @@
         var results = {{ results | tojson }}
     </script>
 
-<style>
-    .error-field{
-        border-bottom: 3px solid red;
-    }
-    .search-img{
-        width: 100%;
-    }
-    .search-result{
-        margin-bottom: 2%;
-    }
-    .album-labels-text{
-        color:lightgray;
-        font-size: 0.75rem;
-    }
-</style>
+    <style>
+
+        .album-labels-text {
+            color: lightgray;
+            font-size: 0.75rem;
+        }
+        .card{
+            width: 18rem;
+            margin-bottom: 1rem;
+        }
+        .year-text{
+            color:gray;
+        }
+        .site-description-text{
+            color:gray;
+        }
+        .hover-over-clickable{
+            opacity: 0.8;
+            cursor: pointer;
+        }
+    </style>
 
 </head>
 
@@ -41,11 +47,12 @@
                 <h2>
                     Welcome to Genius Search
                 </h2>
-                <h3>
-                    Find out who worked on your favorite music to find new music
+                <h3 class="site-description-text">
+                    Find out who worked on your favorite music and find new music
                 </h3>
+                <br>
                 <h4>
-                    Most recent entries
+                    Most recently uploaded albums:
                 </h4>
             </div>
         </div>
