@@ -17,24 +17,33 @@
     </script>
 
     <style>
-
         .album-labels-text {
             color: lightgray;
             font-size: 0.75rem;
         }
-        .card{
+
+        .card {
             width: 18rem;
             margin-bottom: 1rem;
         }
-        .year-text{
-            color:gray;
+
+        .year-text {
+            color: gray;
         }
-        .site-description-text{
-            color:gray;
+
+        .site-description-text {
+            color: gray;
         }
-        .hover-over-clickable{
+
+        .hover-over-clickable {
             opacity: 0.8;
             cursor: pointer;
+        }
+
+        #search-results-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-gap: .5rem;
         }
     </style>
 
@@ -58,7 +67,7 @@
         </div>
 
         <div class="row">
-            <div class="col-md-10" id="search-results-container">
+            <div class="col-md-10 card-deck" id="search-results-container">
             </div>
         </div>
     </div>

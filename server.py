@@ -285,7 +285,7 @@ albums = [
         "description": """Untitled Unmastered (stylized as untitled unmastered.) is a compilation album by American rapper Kendrick Lamar. It was released on March 4, 2016,[1] by Top Dawg Entertainment, Aftermath Entertainment and Interscope Records. It consists of previously unreleased demos that originated during the recording of Lamar's album To Pimp a Butterfly (2015),[2] continuing that work's exploration of politically-charged and philosophical themes, as well as its experimentation with free jazz, soul, avant-garde music, and funk styles. The compilation album received widespread acclaim from critics, and it debuted atop the US Billboard 200. """,
     },
     {
-        "id": 22,
+        "id": 23,
         "title": "DAMN",
         "artists": ["Kendrick Lamar"],
         "year": 2017,
@@ -297,7 +297,7 @@ albums = [
         "description": """ Damn (stylized as DAMN.) is the fourth studio album by American rapper Kendrick Lamar. It was released on April 14, 2017, through Top Dawg Entertainment, distributed by Aftermath Entertainment and Interscope Records. Damn features production from a variety of record producers, including executive producer and Top Dawg Entertainment label-head Anthony "Top Dawg" Tiffith, Sounwave, DJ Dahi, Mike Will Made It, and Ricci Riera; as well as further production contributions from James Blake, Steve Lacy, BadBadNotGood, Greg Kurstin, The Alchemist, and 9th Wonder, among others. Damn features appearances from singers Rihanna and Top Dawg signee Zacari, along with Irish rock band U2.""",
     },
     {
-        "id": 23,
+        "id": 24,
         "title": "Illmatic",
         "artists": ["Nas"],
         "year": 1994,
@@ -309,7 +309,7 @@ albums = [
         "description": """ Illmatic is the debut studio album by American rapper Nas. It was released on April 19, 1994, by Columbia Records. After signing with the label with the help of MC Serch, Nas recorded the album in 1992 and 1993 at Chung King Studios, D&D Recording, Battery Studios, and Unique Recording Studios in New York City. The album's production was handled by DJ Premier, Large Professor, Pete Rock, Q-Tip, L.E.S. and Nas himself. Styled as a hardcore hip hop album, Illmatic features multi-syllabic internal rhymes and inner-city narratives based on Nas' experiences in Queensbridge, New York.""",
     },
     {
-        "id": 24,
+        "id": 25,
         "title": "Born Sinner",
         "artists": ["J. Cole"],
         "year": 2013,
@@ -321,7 +321,7 @@ albums = [
         "description": """ Born Sinner is the second studio album by American rapper J. Cole. It was released on June 18, 2013, by ByStorm Entertainment, Columbia Records, Dreamville Records and Roc Nation. The album serves as the follow-up to his debut album, Cole World: The Sideline Story (2011). The album features guest appearances from Miguel, Amber Coffman, Jhené Aiko, James Fauntleroy, Bas, TLC, Kendrick Lamar and 50 Cent. The album was also primarily produced by Cole himself, along with others such as Jake One, Syience, and Elite.""",
     },
     {
-        "id": 25,
+        "id": 26,
         "title": "2014 Forest Hills Drive",
         "artists": ["J. Cole"],
         "year": 2014,
@@ -333,7 +333,7 @@ albums = [
         "description": """ 2014 Forest Hills Drive is the third studio album by American rapper J. Cole. It was released on December 9, 2014, by ByStorm Entertainment, Columbia Records, Dreamville Records and Roc Nation. Recording sessions took place over the whole year, while the production on the album was primarily handled by Cole himself, along with several others such as Illmind, Vinylz, Phonix Beats and Willie B. It was announced three weeks before its release and had very little marketing, with no singles or promotion taking place prior to its release. The album was supported by four singles: "Apparently", "Wet Dreamz", "No Role Modelz" and "Love Yourz".""",
     },
     {
-        "id": 26,
+        "id": 27,
         "title": "4 Your Eyez Only",
         "artists": ["J. Cole"],
         "year": 2016,
@@ -345,7 +345,7 @@ albums = [
         "description": """ 4 Your Eyez Only is the fourth studio album by American rapper J. Cole. It was released on December 9, 2016, by Dreamville Records, Roc Nation and Interscope Records.[5] The album was Cole's first release with Interscope—his previous albums were released by Columbia Records.[6] 4 Your Eyez Only was released exactly two years after Cole's previous studio album, 2014 Forest Hills Drive.""",
     },
     {
-        "id": 27,
+        "id": 28,
         "title": "KOD",
         "artists": ["J. Cole"],
         "year": 2018,
@@ -357,7 +357,7 @@ albums = [
         "description": """ KOD (an initialism for Kids on Drugs, Kings Overdosed and Kill Our Demons)[1] is the fifth studio album by American rapper J. Cole. It was released on April 20, 2018 through Dreamville Records, Roc Nation and Interscope Records.[2] The majority of the production on the album was handled by Cole himself, along with others such as T-Minus, Mark Pelli, BLVK and Ron Gilmore. The album incorporates elements of jazz rap and trap, Cole has stated that the production and rhyme schemes used throughout the album was inspired by SoundCloud rap. The album explores a variety of topics including drug abuse, addiction, depression, greed, African-American culture, and taxation in the United States.[3]""",
     },
     {
-        "id": 28,
+        "id": 29,
         "title": "Revenge of the Dreamers III",
         "artists": ["Dreamville","J. Cole"],
         "year": 2019,
@@ -369,7 +369,7 @@ albums = [
         "description": """ Revenge of the Dreamers III is the third compilation album by American record label Dreamville and J. Cole, released on July 5, 2019, by Dreamville and Interscope Records. Revenge of the Dreamers III includes contributions from Dreamville artists, J. Cole, Bas, Cozz, Omen, Lute, Ari Lennox, EarthGang, and JID. The album features appearances from several artists including DaBaby, T.I, Young Nudy, Buddy, Reason, Maxo Kream, Ski Mask the Slump God, Mez, 6lack, Mereba, Vince Staples, Ty Dolla Sign, Dreezy, Smino, Saba, and Guapdad 4000, among others. The album features production from a variety of record producers, including T-Minus, Christo, Elite, Bink!, Deputy, Henny Tha Bizness, Hollywood JB, ChaseTheMoney, Pyrex, Galimatias, Pluss, Kal Banx, and Cam O'bi, among others. Recording sessions for Revenge of the Dreamers III took place in Atlanta, Georgia at Tree Sound Studios over the course of 10 days in January 2019. A total of 343 artists and producers were invited, while 142 songs were recorded during the sessions. On the standard edition of the album, 35 artists and 27 producers contributed to the final product.[4] The album was accompanied by a thirty-minute documentary titled, Dreamville Presents: Revenge, documenting the recording sessions.[5]""",
     },
     {
-        "id": 29,
+        "id": 30,
         "title": "Acid Rap",
         "artists": ["Chance the Rapper"],
         "year": 2013,
@@ -381,7 +381,7 @@ albums = [
         "description": """ Acid Rap is the second mixtape by American rapper Chance the Rapper. It was released on April 30, 2013, as a free digital download. In July 2013, the album debuted at number 63 on the Billboard Top R&B/Hip-Hop Albums, due to bootleg downloads on iTunes and Amazon not affiliated with the artist.[2] The mixtape has been certified "diamond" on mixtape site Datpiff, for garnering over 10,000,000 downloads.[3] It was rereleased on streaming services on June 21, 2019, alongside his 2012 mixtape 10 Day.""",
     },
     {
-        "id": 30,
+        "id": 31,
         "title": "Coloring Book",
         "artists": ["Chance the Rapper"],
         "year": 2016,
@@ -396,7 +396,7 @@ albums = [
 
 @app.route('/')
 def index():
-    recent_albums = albums[-9:]
+    recent_albums = albums[-10:]
     recent_albums.reverse()
     return render_template('home.html', results=recent_albums)
 
