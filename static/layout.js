@@ -55,7 +55,7 @@ function get_search_input(){
 }
 
 $(document).ready(function () {
-    $("#search-input").attr("placeholder", "Album name or artist").val("")
+    $("#search-input").attr("placeholder", "Artists, albums, & more").val("")
     
     $("#submit-button").click(function () {
         submit_search()
