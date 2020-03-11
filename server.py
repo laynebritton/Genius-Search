@@ -445,7 +445,7 @@ def search(term=None):
 
 def get_most_recent_non_deleted_albums(count):
     global albums
-    reverse_albums = albums
+    reverse_albums = albums.copy()
     reverse_albums.reverse()
     temp = []
     counter = 0
