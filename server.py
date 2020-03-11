@@ -405,31 +405,28 @@ def search(term=None):
     global albums
     if term=="*all":
         return render_template('search.html', results=albums)
-    # json_data = request.get_json()   
 
-    # search_term = json_data["search_term"]
-
-    search_term = term    
-    results= list(filter(lambda album: (album["title"] == search_term or search_term in album["artists"]), albums))
-    # print(results, flush=True)
-    # return jsonify(results = results)
+    search_term = term.lower()    
+    results= list(filter(lambda album: ( search_fields(album,search_term)  ), albums))
 
     return render_template('search.html', results=results)
 
-# @app.route('/search-results', methods=['GET','POST'])
-# def search_results():
-#     global albums
+def search_fields(album, search_term):
+    if search_term in album["title"].lower():
+        return True
 
-#     json_data = request.get_json()   
+    for artist in album["artists"]:
+        if search_term in artist.lower():
+            return True
 
-#     search_term = json_data["search_term"]
-    
-#     results= list(filter(lambda album: (album["title"] == search_term or search_term in album["artists"]), albums))
-#     # print(results, flush=True)
-#     # return jsonify(results = results)
+    if search_term == str(album["year"]):
+        return True
 
-#     return render_template('search.html', results=results)
+    for label in album["labels"]:
+        if search_term in label.lower():
+            return True
 
+    return False
 
 @app.route('/view/<id>')
 def view(id=None):
