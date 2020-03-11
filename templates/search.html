@@ -31,6 +31,10 @@
          color:lightgray;
          font-size: 0.75rem;
      }
+     .hover-over-clickable {
+            opacity: 0.8;
+            cursor: pointer;
+    }
  </style>
 
 </head>
@@ -40,7 +44,16 @@
      <div class="row search-header">
          <div class="col-md-6">
              <h2>
-                 Search
+                {% if results|length != 1 %}
+
+                {{ results|length}} Results found
+                {% endif %}
+
+                {% if results|length == 1 %}
+
+                {{ results|length}} Result found
+                {% endif %}
+
              </h2>
          </div>
      </div>

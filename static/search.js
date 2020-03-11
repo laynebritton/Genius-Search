@@ -15,14 +15,14 @@ function clear_search_results(){
 }
 
 function add_result(result){
-	var div = $('<div class="row search-result">')
-    var img_div=$('<div class="col-md-2 col-sm-6 search-result-'+ result.id + '">')
+	var div = $('<div class="row search-result search-result-'+ result.id + '">')
+    var img_div=$('<div class="col-md-2 col-sm-6">')
     
     var result_image =$('<img src="' + result.album_art + '" class="search-img">')
     img_div.append(result_image)
     $(div).append(img_div)
 
-	var search_result = $('<div class="search-results col-md-6 search-result-'+ result.id + '">')
+	var search_result = $('<div class="search-results col-md-6">')
 
     var album_title = $('<span class="album-title-text">')
     album_title.text(result.title)
@@ -47,12 +47,17 @@ function add_result(result){
     // Finally append the created div
     $(div).append(search_result)
 	
-	var search_result_delete = $('<div class="col-md-2">')
-	var delete_search_result_button = $("<button class='btn btn-danger' id='" + result.id + "'>")
-	delete_search_result_button.text("X")
+	// var search_result_delete = $('<div class="col-md-2">')
+	// var delete_search_result_button = $("<button class='btn btn-danger' id='" + result.id + "'>")
+	// delete_search_result_button.text("X")
 
-	$(search_result_delete).append(delete_search_result_button)
-	$(div).append(search_result_delete)
+    	// $(search_result_delete).append(delete_search_result_button)
+	// $(div).append(search_result_delete)
+
+	// $("#" + result.id).click(function () {
+	// 	delete_album($(this ).attr('id'))
+    // })
+
 
 	$("#search-results-container").append(div)
 
@@ -60,9 +65,15 @@ function add_result(result){
         window.location.href = "/view/"+result.id;
     })
 
-	$("#" + result.id).click(function () {
-		delete_album($(this ).attr('id'))
-    })
+    
+    $(".search-result-" + result.id).hover(function () {
+        $(this).addClass("hover-over-clickable")
+    }, function () {
+        
+        $(this).removeClass('hover-over-clickable');
+    });
+
+
     
 }
 
