@@ -273,7 +273,7 @@ albums = [
         "description": """ Coloring Book is the third mixtape by American rapper Chance the Rapper. It was produced by his group The Social Experiment, Lido, and Kaytranada, among others. For the mixtape, Chance also collaborated with musicians such as Kanye West, Young Thug, Francis and the Lights, Justin Bieber, 2 Chainz, Kirk Franklin, and the Chicago Children's Choir. Coloring Book was released on May 13, 2016, exclusively on Apple Music, before being made available to other streaming services on May 27. It was the first album to chart on the US Billboard 200 solely on streams, peaking at number eight, while receiving widespread acclaim from critics who praised its fusion of hip hop and gospel sounds. It won Best Rap Album at the 2017 Grammy Awards. It was also the first streaming-only album ever to win a Grammy.[2]""",
     },
         {
-        "id": 1,
+        "id": 32,
         "title": "SATURATION",
         "artists": ["Brockhampton"],
         "year": 2017,
@@ -285,7 +285,7 @@ albums = [
         "description": """ Saturation (stylized in all caps) is the debut studio album by American rap collective Brockhampton, released on June 9, 2017.[2][3] It's part of the Saturation trilogy, together with Saturation II and III. It primarily features Brockhampton members Kevin Abstract, Merlyn Wood, Dom McLennon, Matt Champion, Russell "Joba" Boring, and former member Ameer Vann. Group member Bearface also contributes to the album's closing track. Production was primarily handled by Romil Hemnani and Q3—a production duo consisting of Jabari Manwa and Kiko Merley, with additional production contributions by Joba, Bearface, and Rome Gomez.""",
     },
     {
-        "id": 2,
+        "id": 33,
         "title": "SATURATION II",
         "artists": ["Brockhampton"],
         "year": 2017,
@@ -297,7 +297,7 @@ albums = [
         "description": """Saturation II (stylized in all caps) is the second studio album by American rap collective Brockhampton, released on August 25, 2017.[1] Production is primarily handled by Romil Hemnani, alongside production duo Q3 (composed of Jabari Manwa and Kiko Merley), Bearface, Kevin Abstract, and JOBA. """,
     },
     {
-        "id": 3,
+        "id": 34,
         "title": "SATURATION III",
         "artists": ["Brockhampton"],
         "year": 2017,
@@ -309,7 +309,7 @@ albums = [
         "description": """Saturation III (stylized in all caps) is the third studio album by American rap collective Brockhampton, released on December 15, 2017.[1][2] Production is predominantly handled by Romil Hemnani, alongside production duo Q3 (composed of Jabari Manwa and Kiko Merley), as with previous releases. It concludes the Saturation trilogy, commenced with Saturation and followed with Saturation II. Originally promoted as the group's "final studio album", the group announced their fourth album, Team Effort, a day before Saturation III was released.[3] Saturation III is the band's last album with founding member Ameer Vann, who left the band in May 2018 amid accusations of sexual misconduct.[4] """,
     },
     {
-        "id": 4,
+        "id": 35,
         "title": "iridescence",
         "artists": ["Brockhampton"],
         "year": 2018,
@@ -321,7 +321,7 @@ albums = [
         "description": """ Iridescence (stylized in all lowercase) is the fourth studio album by American rap collective Brockhampton, released on September 21, 2018 by Question Everything, Inc. RCA Records. It is their major-label debut and the first installment of their The Best Years of Our Lives trilogy. The self-produced album was recorded at Abbey Road Studios in London, as well as the group's own studio in Hawaii. It is their first album since founding member Ameer Vann's departure from the group following sexual misconduct allegations. It debuted at number one on the US Billboard 200 albums chart, becoming the group's first chart-topping album.""",
     },
     {
-        "id": 5,
+        "id": 36,
         "title": "GINGER",
         "artists": ["Brockhampton"],
         "year": 2019,
@@ -333,7 +333,7 @@ albums = [
         "description": """Ginger (stylized in all caps) is the fifth studio album by American hip hop collective Brockhampton. It was released on August 23, 2019, through the band's label Question Everything and RCA.[2]""",
     },
     {
-        "id": 6,
+        "id": 37,
         "title": "Flower Boy",
         "artists": ["Tyler, the Creator"],
         "year": 2017,
@@ -345,7 +345,7 @@ albums = [
         "description": """ Flower Boy (alternatively titled Scum Fuck Flower Boy) is the fourth studio album by American rapper Tyler, the Creator. The album was released on July 21, 2017, by Columbia Records. Produced entirely by Tyler, the album features guest vocals from a range of artists; including Frank Ocean, ASAP Rocky, Anna of the North, Lil Wayne, Kali Uchis, Steve Lacy, Estelle, Jaden Smith and Rex Orange County. Flower Boy was supported by four singles: "Who Dat Boy" / "911", "Boredom", "I Ain't Got Time!" and "See You Again". The album received widespread acclaim from critics, and debuted at number two on the US Billboard 200. It was named among the best albums of 2017 by multiple publications and was nominated for Best Rap Album at the 2018 Grammy Awards.""",
     },
     {
-        "id": 7,
+        "id": 38,
         "title": "IGOR",
         "artists": ["Tyler, the Creator"],
         "year": 2019,
@@ -357,7 +357,7 @@ albums = [
         "description": """ Igor (stylized in all caps) is the fifth studio album[a] by American rapper Tyler, the Creator, released on May 17, 2019, through A Boy is a Gun and distributed by Columbia Records. Produced entirely by Tyler, the album follows the 2017 release of Flower Boy. It features guest appearances from Playboi Carti, Lil Uzi Vert, Solange, Kanye West, and Jerrod Carmichael, along with backing vocals from Santigold, Jessy Wilson, La Roux, CeeLo Green, Charlie Wilson, Slowthai, and Pharrell, among others. Igor received widespread acclaim from critics and debuted at number one on the US Billboard 200, becoming Tyler's first US number-one album. The album's lead single "Earfquake" became Tyler's highest-charting US Billboard Hot 100 single, peaking at number 13. It won Best Rap Album at the 2020 Grammy Awards.""",
     },
     {
-        "id": 8,
+        "id": 39,
         "title": "TA13OO",
         "artists": ["Denzel Curry"],
         "year": 2018,
@@ -369,7 +369,7 @@ albums = [
         "description": """ Ta13oo (stylized TA13OO and pronounced Taboo) is the third studio album by American rapper Denzel Curry. It was released on July 27, 2018, through PH Recordings and distributed by Loma Vista Recordings. The album serves as the follow-up to Curry's second studio album, Imperial, released in 2016, and the 13 EP, released in 2017. Ta13oo features guest appearances from Twelve'len, GoldLink, Nyyjerya, JID, JPEGMafia, ZillaKami, and additional vocals by Billie Eilish. Production was handled by FnZ, DJ Dahi, Ronny J, Illmind, Charlie Heat, and Mickey de Grand IV, among others. Ta13oo was supported by five singles: "Sumo", "Percs", "Clout Cobain", "Vengeance", and "Black Balloons". The album received widespread acclaim from critics.""",
     },
     {
-        "id": 9,
+        "id": 40,
         "title": "ZUU",
         "artists": ["Denzel Curry"],
         "year": 2019,
@@ -381,7 +381,7 @@ albums = [
         "description": """ Zuu (stylized in all caps) is the fourth studio album by American rapper Denzel Curry, released through PH Recordings and distributed by Loma Vista Recordings on May 31, 2019. The title is a nickname for his home city, Carol City, Miami, Florida. Zuu is the follow-up to Curry's 2018 studio album Ta13oo. It was supported by two singles: "Ricky" and "Speedboat". The album received widespread acclaim from critics, with many praising Curry's tributes to other artists from Carol City.""",
     },
     {
-        "id": 10,
+        "id": 41,
         "title": "The College Droupout",
         "artists": ["Kanye West"],
         "year": 2004,
