@@ -31,79 +31,46 @@ function create_album(){
 }
 
 function validate_input(){
+
+	if($("#album-art-input").val()){
+		$("#album-art-input").removeClass("error-field")
+	}
+
+	if($("#description-input").val()){
+		$("#description-input").removeClass("error-field")
+	}
+
+	    
+    if($("#producers-input").val()){
+		$("#producers-input").removeClass("error-field")
+	}
+	
+	if($("#labels-input").val()){
+		$("#labels-input").removeClass("error-field")
+	}
+	
+    if($("#genres-input").val()){
+		$("#genres-input").removeClass("error-field")
+	}
+
+	if($("#year-input").val()){
+		$("#year-input").removeClass("error-field")
+	}
+	
+	if($("#artists-input").val()){
+		$("#artists-input").removeClass("error-field")
+	}
+
+    if($("#title-input").val()){
+		$("#title-input").removeClass("error-field")
+	}
+
+}
+
+function validate_input_focus(){
     var input_is_verified = true
 
-    if(!$("#title-input").val()){
-		$("#title-input").addClass("error-field")
-		$("#title-input").focus()
-		
-		input_is_verified = false
-	}
-	else{
-		$("#title-input").removeClass("error-field")
-    }
-    
-    if(!$("#artists-input").val()){
-		$("#artists-input").addClass("error-field")
-		$("#artists-input").focus()
-		
-		input_is_verified = false
-	}
-	else{
-		$("#artists-input").removeClass("error-field")
-    }
-
-    if(!$("#year-input").val()){
-		$("#year-input").addClass("error-field")
-		$("#year-input").focus()
-		
-		input_is_verified = false
-	}
-	else{
-		$("#year-input").removeClass("error-field")
-    }
-    
-    if(!$("#genres-input").val()){
-		$("#genres-input").addClass("error-field")
-		$("#genres-input").focus()
-		
-		input_is_verified = false
-	}
-	else{
-		$("#genres-input").removeClass("error-field")
-    }
-    
-    if(!$("#labels-input").val()){
-		$("#labels-input").addClass("error-field")
-		$("#labels-input").focus()
-		
-		input_is_verified = false
-	}
-	else{
-		$("#labels-input").removeClass("error-field")
-    }
-    
-    if(!$("#producers-input").val()){
-		$("#producers-input").addClass("error-field")
-		$("#producers-input").focus()
-		
-		input_is_verified = false
-	}
-	else{
-		$("#producers-input").removeClass("error-field")
-    }
-
-    if(!$("#description-input").val()){
-		$("#description-input").addClass("error-field")
-		$("#description-input").focus()
-		
-		input_is_verified = false
-	}
-	else{
-		$("#description-input").removeClass("error-field")
-    }
-    
-    if(!$("#album-art-input").val()){
+	if(!$("#album-art-input").val()){
 		$("#album-art-input").addClass("error-field")
 		$("#album-art-input").focus()
 		
@@ -113,14 +80,91 @@ function validate_input(){
 		$("#album-art-input").removeClass("error-field")
 	}
 
+    if(!$("#description-input").val()){
+		$("#description-input").addClass("error-field")
+		$("#description-input").focus()
+		
+		input_is_verified = false
+	}
+	else{
+		$("#description-input").removeClass("error-field")
+	}
+
+	    
+    if(!$("#producers-input").val()){
+		$("#producers-input").addClass("error-field")
+		$("#producers-input").focus()
+		
+		input_is_verified = false
+	}
+	else{
+		$("#producers-input").removeClass("error-field")
+    }
+	
+	if(!$("#labels-input").val()){
+		$("#labels-input").addClass("error-field")
+		$("#labels-input").focus()
+		
+		input_is_verified = false
+	}
+	else{
+		$("#labels-input").removeClass("error-field")
+    }
+	
+    if(!$("#genres-input").val()){
+		$("#genres-input").addClass("error-field")
+		$("#genres-input").focus()
+		
+		input_is_verified = false
+	}
+	else{
+		$("#genres-input").removeClass("error-field")
+    }
+
+	if(!$("#year-input").val()){
+		$("#year-input").addClass("error-field")
+		$("#year-input").focus()
+		
+		input_is_verified = false
+	}
+	else{
+		$("#year-input").removeClass("error-field")
+	}
+	
+	if(!$("#artists-input").val()){
+		$("#artists-input").addClass("error-field")
+		$("#artists-input").focus()
+		
+		input_is_verified = false
+	}
+	else{
+		$("#artists-input").removeClass("error-field")
+	}
+	
+    if(!$("#title-input").val()){
+		$("#title-input").addClass("error-field")
+		$("#title-input").focus()
+		
+		input_is_verified = false
+	}
+	else{
+		$("#title-input").removeClass("error-field")
+    }
+
 	return input_is_verified;
 }
 $(document).ready(function () {
 
-    $("#submit-button").click(function () {
-        if(validate_input()){
+    $("#create-button").click(function () {
+		console.log(validate_input_focus())
+		if(validate_input_focus()){
+			
             create_album()
         }
-    })    
+	})    
+	
+	$("input").keyup(function(){
+		validate_input()
+	});
 
 })

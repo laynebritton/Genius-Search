@@ -454,7 +454,7 @@ def get_most_recent_non_deleted_albums(count):
             temp.append(album)
             counter += 1
         if counter >= count:
-            temp.reverse()
+            temp
             return temp
     return temp
 
