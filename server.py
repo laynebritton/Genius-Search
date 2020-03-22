@@ -19,7 +19,6 @@ albums = [
         "genres": ["Hip hop"],
         "user_reviews" : [],
         "mark_as_deleted": False,
-        "mark_as_deleted": False,
         "description": """ Late Registration is the second studio album by American rapper and producer Kanye West. It was released on August 30, 2005, through Def Jam Recordings and Roc-A-Fella Records. The album was recorded for over a year in sessions held across studios in New York City and Hollywood, with West collaborating with American record producer and composer Jon Brion. It features guest contributions from Adam Levine, Lupe Fiasco, Jamie Foxx, Common, Jay-Z, Brandy, and Nas, among others. The production of Late Registration was notably more lush and elaborate than West's 2004 debut studio album The College Dropout, as he utilized intricate sampling methods and string orchestration with Brion while drawing on stylistic influences from alternative acts such as Portishead, Coldplay, and Fiona Apple. The rapper's lyrics explore both personal and broader political themes, including poverty, drug trafficking, racism, healthcare, and the blood diamond trade.""",
     },
     {
@@ -429,7 +428,7 @@ albums = [
 
 @app.route('/')
 def index():
-    recent_albums = get_most_recent_non_deleted_albums(10)
+    recent_albums = get_most_recent_non_deleted_albums(12)
     return render_template('home.html', results=recent_albums)
 
 @app.route('/search/<term>')
@@ -482,6 +481,19 @@ def search_fields(album, search_term):
 def view(id=None):
     global albums
     return render_template('album-view.html', album = next((album for album in albums if album["id"] == int(id)),None))
+
+@app.route('/mark-as-deleted', methods=['POST'])
+def mark_album_as_deleted():
+    global albums
+    json_data = request.get_json()
+
+    id_to_mark_as_deleted = json_data["id"]
+
+    album = next((album for album in albums if album["id"] == int(id_to_mark_as_deleted)),None)
+    album["mark_as_deleted"] = True
+
+    return jsonify(album)
+
 
 @app.route('/create')
 def create():
