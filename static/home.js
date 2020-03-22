@@ -5,8 +5,6 @@ function update_results(){
 }
 
 function populate_results (){
-    console.log(results)
-
     results.forEach(add_result)
 }
 

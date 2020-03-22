@@ -492,6 +492,19 @@ def mark_album_as_deleted():
     album = next((album for album in albums if album["id"] == int(id_to_mark_as_deleted)),None)
     album["mark_as_deleted"] = True
 
+    print("deleted", flush=True)
+    return jsonify(album)
+
+@app.route('/unmark-as-deleted', methods=['POST'])
+def unmark_album_as_deleted():
+    global albums
+    json_data = request.get_json()
+
+    id_to_unmark_as_deleted = json_data["id"]
+
+    album = next((album for album in albums if album["id"] == int(id_to_unmark_as_deleted)),None)
+    album["mark_as_deleted"] = False
+
     return jsonify(album)
 
 
