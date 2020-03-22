@@ -492,7 +492,6 @@ def mark_album_as_deleted():
     album = next((album for album in albums if album["id"] == int(id_to_mark_as_deleted)),None)
     album["mark_as_deleted"] = True
 
-    print("deleted", flush=True)
     return jsonify(album)
 
 @app.route('/unmark-as-deleted', methods=['POST'])
