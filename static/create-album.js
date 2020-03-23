@@ -17,8 +17,10 @@ function create_album(){
         contentType: "application/json; charset=utf-8",
         data : JSON.stringify(query),
         success: function(result){
-            window.location.href = "/view/"+result["id"]
-
+			clear_redirect_container()
+			insert_redirect_link(result)
+			clear_input_fields()
+			$('#title-input').focus()
         },
         error: function(request, status, error){
             console.log("Error retrieving search results");
@@ -28,6 +30,40 @@ function create_album(){
         }
     });
 
+}
+
+function clear_input_fields(){
+	$("#album-art-input").val('')
+
+	$("#description-input").val('')
+	    
+    $("#producers-input").val('')
+
+	$("#labels-input").val('')
+	
+    $("#genres-input").val('')
+
+	$("#year-input").val('')
+
+	$("#artists-input").val('')
+
+    $("#title-input").val('')
+
+}
+
+function insert_redirect_link(album){
+	var span = $('<span>')
+	$(span).text( album["title"] + " successfully created. ")
+	var redirect =$('<a href="/view/' + album["id"] + '">')
+	$(redirect).text("Check it out here")
+
+	$('#redirect-container').append(span)
+	$('#redirect-container').append(redirect)
+
+}
+
+function clear_redirect_container(){
+	$('#redirect-container').empty()
 }
 
 function validate_input(){
