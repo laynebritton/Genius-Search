@@ -537,10 +537,6 @@ def create_album():
 
     return jsonify(new_album)
 
-@app.route( '/edit/<id>')
-def edit(id=None):
-    return render_template('update-album.html', album = next((album for album in albums if album["id"] == int(id)),None))
-
 @app.route('/add-review', methods=['POST'])
 def add_review():
     global albums
