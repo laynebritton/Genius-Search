@@ -556,6 +556,22 @@ def add_review():
 
     return jsonify(results)
 
+@app.route('/update-description', methods=['POST'])
+def update_description():
+    global albums
+    json_data = request.get_json()   
+
+    id = json_data["id"]
+
+    description = json_data["description"]
+
+    results= list(filter(lambda album: album["id"] == id, albums))
+    
+    for result in results:
+        result["description"] = description
+
+    return jsonify(results)
+
 @app.route('/delete-album',methods=['POST'])
 def delete_album():
     global albums

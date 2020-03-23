@@ -217,7 +217,7 @@ function insert_review(review_text){
     $(review_entry).text(review_text)
 
     $(review_card).append(review_entry)
-    $("#review-container").append(review_card)
+    $("#review-container").prepend(review_card)
 }
 
 function insert_no_reviews_text(){
@@ -233,13 +233,13 @@ function insert_description_editor(){
     var form_group = $('<div class="form-group">')
 
 
-    var text_area = $('<textarea id="description-editor-textarea" class="form-control" rows="10">')
+    var text_area = $('<textarea id="description-editor-textarea" class="form-control" rows="12">')
     $(text_area).val(album.description)
 
     var submit_button = $('<button id="submit-description-button" class="btn btn-primary" alt="Submit Review">')
     $(submit_button).text("Save changes")
     var cancel_button = $('<button id="cancel-description-button" class="btn btn-secondary" alt="Cancel review" >')
-    $(cancel_button).text("Cancel")
+    $(cancel_button).text("Discard changes")
 
     $(form_group).append(text_area)
     
@@ -263,14 +263,12 @@ function insert_description_editor(){
     })
     
     $("#submit-description-button").click(function () {
-        add_review()
-        clear_review_creator_container()
-        insert_leave_review_button()
+        update_description()
     })
 }
 
 function insert_description(){
-    var description_text = $('<span>')
+    var description_text = $('<span alt="' +album.description +'" >')
 
     $(description_text).text(album.description)
     $('#description-container').append(description_text)
@@ -279,6 +277,35 @@ function insert_description(){
 function clear_description_container(){
     $('#description-container').empty()
 }
+
+function update_description(){
+    user_description =  $("#description-editor-textarea").val()
+    var query= {
+        "id": album.id,
+        "description": user_description
+    }
+
+    $.ajax({
+        type: "POST",
+        url: "/update-description",                
+        dataType : "json",
+        contentType: "application/json; charset=utf-8",
+        data : JSON.stringify(query),
+        success: function(result){
+            in_edit_description_state = false
+            album.description = user_description
+            clear_description_container()
+            insert_description()
+        },
+        error: function(request, status, error){
+            console.log("Error retrieving search results");
+            console.log(request)
+            console.log(status)
+            console.log(error)
+        }
+    });
+}
+
 
 $(document).ready(function () {
     insert_delete_button()
@@ -290,7 +317,7 @@ $(document).ready(function () {
         if(in_edit_description_state == false){
             in_edit_description_state = true
             insert_description_editor()
-            
+            $('#description-editor-textarea').focus()
         }
         else{
             in_edit_description_state = false
