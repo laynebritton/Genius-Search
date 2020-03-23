@@ -15,7 +15,7 @@ function clear_search_results(){
 function add_result(result){
     var card = $('<div class="card">')
 
-    var card_img = $('<img src="' + result.album_art + '" class="card-img-top search-img" id="'+ result.id +'">')
+    var card_img = $('<img src="' + result.album_art + '" class="card-img-top search-img" id="'+ result.id +'" alt="'+ result.title + ' album art.">')
     $(card).append(card_img)
 
     var card_body = $('<div class="card-body">')
