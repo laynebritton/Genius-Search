@@ -12,8 +12,6 @@ function delete_album(id){
         contentType: "application/json; charset=utf-8",
         data : JSON.stringify(query),
         success: function(result){
-            // window.location.href = "/view/"+result["id"]
-
             clear_delete_container()
             insert_undo_button()
         },
@@ -83,6 +81,67 @@ function clear_delete_container(){
     $("#delete-container").empty()
 }
 
+function clear_review_creator_container(){
+    $("#review-creator-container").empty()
+}
+
+function clear_insert_leave_review_button(){
+    $('#leave-review-button-container').empty()
+}
+
+function insert_leave_review_button(){
+    var add_review_button = $('<button id="add-review-button" class="btn btn-primary">')
+    $(add_review_button).text("Leave a review")
+
+    $('#leave-review-button-container').append(add_review_button)
+
+    $("#add-review-button").click(function () {
+        clear_insert_leave_review_button()
+        insert_review_creator()
+	})
+
+
+}
+
+function insert_review_creator(){
+
+    var form_group = $('<div class="form-group">')
+    var label = $('<label>')
+    $(label).text("Enter review: ")
+
+    var text_area = $('<textarea id="review-textarea" class="form-control" rows="3">')
+
+    var submit_button = $('<button id="submit-review-button" class="btn btn-primary" alt="Submit Review">')
+    $(submit_button).text("Submit review")
+    var cancel_button = $('<button id="cancel-review-button" class="btn btn-secondary" alt="Cancel review" >')
+    $(cancel_button).text("Cancel")
+
+    $(form_group).append(label)
+    $(form_group).append(text_area)
+    
+    $(form_group).append(submit_button)
+    
+    var tab = $('<span>')
+    $(tab).text("\t")
+    $(form_group).append(tab)
+
+    $(form_group).append(cancel_button)
+
+    $('#review-creator-container').append(form_group)
+
+    $("#cancel-review-button").click(function () {
+        clear_review_creator_container()
+        insert_leave_review_button()
+    })
+    
+    $("#submit-review-button").click(function () {
+        add_review()
+        clear_review_creator_container()
+        insert_leave_review_button()
+    })
+}
+
+
 function undo_delete_album(id){
     var query= {
         "id": id,
@@ -110,9 +169,66 @@ function undo_delete_album(id){
 }
 
 
+function add_review(){
+    user_review =  $("#review-textarea").val()
+    var query= {
+        "id": album.id,
+        "user_review": user_review
+    }
+
+    $.ajax({
+        type: "POST",
+        url: "/add-review",                
+        dataType : "json",
+        contentType: "application/json; charset=utf-8",
+        data : JSON.stringify(query),
+        success: function(result){
+            album.user_reviews.push(user_review)
+            clear_reviews()
+            insert_reviews()
+        },
+        error: function(request, status, error){
+            console.log("Error retrieving search results");
+            console.log(request)
+            console.log(status)
+            console.log(error)
+        }
+    });
+
+}
+
+function clear_reviews(){
+    $('#review-container').empty()
+}
+
+function insert_reviews(){
+    if(album.user_reviews.length == 0){
+        insert_no_reviews_text()
+        return
+    }
+    album.user_reviews.forEach(insert_review)
+}
+
+function insert_review(review_text){
+    var review_card = $('<div class="card">')
+
+    var review_entry = $('<div class="card-body" >')
+    $(review_entry).text(review_text)
+
+    $(review_card).append(review_entry)
+    $("#review-container").append(review_card)
+}
+
+function insert_no_reviews_text(){
+    var span = $('<span>')
+
+    $(span).text("No user reviews yet")
+
+    $("#review-container").append(span)
+}
+
 $(document).ready(function () {
-
     insert_delete_button()
-
-
+    insert_leave_review_button()
+    insert_reviews()
 })
