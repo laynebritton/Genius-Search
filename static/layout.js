@@ -65,11 +65,11 @@ $(document).ready(function () {
         validate_input(get_search_input)
     })
 
-    $(document).keyup(function (event) {
-		var keycode = (event.keyCode ? event.keyCode : event.which);
-		if (keycode == '13') {
-            submit_search()
-		}
-    });
+    // $(document).keyup(function (event) {
+	// 	var keycode = (event.keyCode ? event.keyCode : event.which);
+	// 	if (keycode == '13') {
+    //         submit_search()
+	// 	}
+    // });
 
 })

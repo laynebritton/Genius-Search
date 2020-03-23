@@ -1,4 +1,4 @@
-var album_has_been_deleted = false
+var in_edit_description_state = false
 
 function delete_album(id){
     var query= {
@@ -98,6 +98,7 @@ function insert_leave_review_button(){
     $("#add-review-button").click(function () {
         clear_insert_leave_review_button()
         insert_review_creator()
+        $("#review-textarea").focus()
 	})
 
 
@@ -227,8 +228,75 @@ function insert_no_reviews_text(){
     $("#review-container").append(span)
 }
 
+function insert_description_editor(){
+
+    var form_group = $('<div class="form-group">')
+
+
+    var text_area = $('<textarea id="description-editor-textarea" class="form-control" rows="10">')
+    $(text_area).val(album.description)
+
+    var submit_button = $('<button id="submit-description-button" class="btn btn-primary" alt="Submit Review">')
+    $(submit_button).text("Save changes")
+    var cancel_button = $('<button id="cancel-description-button" class="btn btn-secondary" alt="Cancel review" >')
+    $(cancel_button).text("Cancel")
+
+    $(form_group).append(text_area)
+    
+    $(form_group).append(submit_button)
+    
+    var tab = $('<span>')
+    $(tab).text("\t")
+    $(form_group).append(tab)
+
+    $(form_group).append(cancel_button)
+
+
+    clear_description_container()
+
+    $('#description-container').append(form_group)
+
+    $("#cancel-description-button").click(function () {
+        in_edit_description_state = false
+        clear_description_container()
+        insert_description()
+    })
+    
+    $("#submit-description-button").click(function () {
+        add_review()
+        clear_review_creator_container()
+        insert_leave_review_button()
+    })
+}
+
+function insert_description(){
+    var description_text = $('<span>')
+
+    $(description_text).text(album.description)
+    $('#description-container').append(description_text)
+}
+
+function clear_description_container(){
+    $('#description-container').empty()
+}
+
 $(document).ready(function () {
     insert_delete_button()
     insert_leave_review_button()
     insert_reviews()
+    insert_description()
+
+    $("#edit-description-button").click(function () {
+        if(in_edit_description_state == false){
+            in_edit_description_state = true
+            insert_description_editor()
+            
+        }
+        else{
+            in_edit_description_state = false
+            clear_description_container()
+            insert_description()
+        }
+    })
+
 })
